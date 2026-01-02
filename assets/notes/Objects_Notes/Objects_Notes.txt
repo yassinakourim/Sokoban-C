@@ -1,7 +1,0 @@
-The folder "Crate Places" holds the objects that are the places for the crates to be placed on. 
-
-The folder "Crates" holdfs the crates.
-
-The folder "Player" holds the player itself.
-
-The folder "Walls" holds the walls.
