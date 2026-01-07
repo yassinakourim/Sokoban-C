@@ -14,14 +14,12 @@ SDL_Texture* load_texture(SDL_Renderer* renderer, const char* texture_path) {
   // Load image at specified path
   SDL_Surface* image_surface = IMG_Load(texture_path);
   if (image_surface == NULL) {
-    printf("Unable to load image %s! SDL_image Error: %s\n", texture_path,
-           SDL_GetError());
+    
   } else {
     // Create texture from surface pixels
     new_texture = SDL_CreateTextureFromSurface(renderer, image_surface);
     if (new_texture == NULL) {
-      printf("Unable to create texture from %s! SDL Error: %s\n", texture_path,
-             SDL_GetError());
+      
     }
 
     // Get rid of old loaded surface
@@ -48,7 +46,7 @@ bool init_view(SDL_Renderer* renderer, WorldView* view, World* world,
 void render_view(SDL_Renderer* renderer, WorldView* view,
                  Direction player_direction, bool player_is_moving) {
   if (view == NULL || view->world == NULL) {
-    printf("Error: render_view called with null view or world.\n");
+    
     return;
   }
   for (size_t line = 0; line < view->world->height; line += 1) {

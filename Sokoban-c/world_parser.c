@@ -65,13 +65,13 @@ bool init_parser(WorldParser* parser, const char* level_file_path) {
 }
 
 bool load_level(WorldParser* parser, World* world) {
-  printf("load_level: Attempting to open file: %s\n", parser->level_file_path);
+  
   FILE* level_file = fopen(parser->level_file_path, "r");
   if (level_file == NULL) {
-    printf("load_level: Failed to open file: %s\n", parser->level_file_path);
+    
     return false;
   }
-  printf("load_level: File opened successfully.\n");
+  
   memset(world->map, 0, sizeof(world->map));
   world->height = 0;
   world->width = 0;
@@ -126,8 +126,8 @@ bool load_level(WorldParser* parser, World* world) {
 void print_world(World* world) {
   for (size_t line = 0; line < world->height; line += 1) {
     for (size_t col = 0; col < world->width; col += 1) {
-      printf("%c", map_byte_to_txt_char(world->map[line][col]));
+      
     }
-    printf("\n");
+    
   }
 }
